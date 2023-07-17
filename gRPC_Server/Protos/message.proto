@@ -1,0 +1,11 @@
+﻿ntax = "proto3";
+
+option csharp_namespace = "gRPC_Server.Protos";
+​
+package message;
+​
+service MessageProvider{
+	rpc PrintMessage(Empty) returns (Empty);
+}
+​
+message Empty {}	
