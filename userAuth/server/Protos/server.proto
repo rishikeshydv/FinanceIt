@@ -1,18 +1,18 @@
 syntax = "proto3";
 
-option csharp_namespace = "CreditRatingService";
+option csharp_namespace = "authService";
 
-package CreditRating;
+package auth;
 
-service CreditRatingCheck {
-  rpc CheckCreditRequest (CreditRequest) returns (CreditReply);
+service authCheck {
+  rpc authRequest (authRequest) returns (authReply);
 }
 
-message CreditRequest {
-  string customerId = 1;
-  int32 credit = 2;
+message authRequest {
+  string userid = 1;
+  int32 pass = 2;
 }
 
-message CreditReply {
+message authReply {
   bool isAccepted = 1;
 }
