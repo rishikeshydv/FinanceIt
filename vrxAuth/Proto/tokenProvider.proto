@@ -1,0 +1,29 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "vrxAuth.Proto";
+
+service tokenProvider {
+    rpc getToken (tokenRequest) returns (tokenResponse);
+    rpc Register (RegisterRequest) returns (RegisterResponse);
+}
+
+message tokenRequest {
+    string UserName = 1;
+    string Password = 2;
+}
+
+message tokenResponse {
+    string token = 1;
+}
+
+message RegisterRequest {
+    string UserName = 1;
+    string Password = 2;
+    string FirstName = 3;
+    string LastName = 4;
+}
+
+message RegisterResponse {
+    bool Success = 1;
+    string Message = 2;
+}
